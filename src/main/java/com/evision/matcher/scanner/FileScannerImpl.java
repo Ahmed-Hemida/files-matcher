@@ -48,7 +48,7 @@ public class FileScannerImpl implements  FileScanner {
                     .filter(Files::isRegularFile)
                     .map(Path::toAbsolutePath)
                     .map(Path::normalize)
-                    .filter(path -> !path.equals(reference)) //for not loud the reference file in the pool files
+                    .filter(path -> !path.equals(reference)) //for not loud the reference file in the pool files    
                     .toList();
 
         } catch (IOException ex) {
