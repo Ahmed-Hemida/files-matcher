@@ -1,5 +1,5 @@
 package com.evision.matcher.model;
 
-public class MatchResult {
+import java.nio.file.Path;
 
-}
+public record MatchResult(Path file,double score) {}

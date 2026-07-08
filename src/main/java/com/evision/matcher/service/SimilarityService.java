@@ -1,5 +1,11 @@
 package com.evision.matcher.service;
 
-public class SimilarityService {
+import java.util.Set;
+
+public interface SimilarityService {
+    
+     double calculate(final Set<String> referenceWords,
+                     final Set<String> candidateWords);
+                    
 
 }
