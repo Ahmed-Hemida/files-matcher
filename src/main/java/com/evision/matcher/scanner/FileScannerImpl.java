@@ -58,7 +58,10 @@ public class FileScannerImpl implements  FileScanner {
     }
 
     private void validateReferenceFile(Path file) throws IOException {
-
+    boolean isTxt = file.getFileName().toString().toLowerCase().endsWith(".txt");
+        if(!isTxt){
+            throw new IOException("Invalid directory: " + file.toString() + " Directory must be a .txt file.");
+        }
         if (!Files.exists(file))
             throw new FileNotFoundException(file.toString());
 
@@ -68,6 +71,7 @@ public class FileScannerImpl implements  FileScanner {
 
     private void validateDirectory(Path directory) throws IOException {
 
+        
         if (!Files.exists(directory))
             throw new IOException(directory.toString());
 
